@@ -1,27 +1,23 @@
 import Button from "./components/Button"
-import H1 from "./components/H1"
-import Label from "./components/Label"
-import P from "./components/P"
-import TextInput from "./components/TextInput"
-import Error from "./components/Error"
+import Form from "./components/Form"
+import StepNumber from "./components/StepNumber"
 
 function App() {
 
   return (
-    <>
-      <H1 className="font-bold text-2xl/tight text-blue-950 md:text-3xl/tight">Personal info</H1>
-      <P>Please provide your name, email address, and phone number.</P>
-      <div style={{ display: "flex", gap: "0.5rem" }}>
-        <Button variant="primary">Next Step</Button>
-        <Button variant="secondary">Confirm</Button>
-        <Button variant="tertiary">Go Back</Button>
+    <main className="relative h-screen bg-[url(/images/bg-sidebar-mobile.svg)] bg-no-repeat bg-contain bg-top bg-blue-100 md:bg-none px-4">
+
+      <div className="flex justify-center gap-4 py-8">
+        <StepNumber isCurrent={true}>1</StepNumber>
+        <StepNumber>2</StepNumber>
+        <StepNumber>3</StepNumber>
+        <StepNumber>4</StepNumber>
       </div>
-      <div style={{ display: "inline-flex", flexDirection: "column", gap: "0.5rem" }}>
-        <Label htmlFor={"name"}>Name</Label>
-        <Error>This field is required</Error>
-        <TextInput type="text" id="name" name="name" placeholder="e.g. Stephen King" autoComplete="name" />
+      <Form />
+      <div className="flex justify-end absolute bottom-0 left-0 right-0 p-4 bg-white">
+        <Button type="button" variant="primary">Next Step</Button>
       </div>
-    </>
+    </main>
   )
 }
 
