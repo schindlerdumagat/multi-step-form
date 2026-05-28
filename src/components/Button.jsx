@@ -1,4 +1,4 @@
-function Button({ children, type = "button", variant = "tertiary", onClick }) {
+function Button({ children, type = "button", variant = "tertiary", onClick, classes }) {
 
   const variantStyles = {
     primary: "text-white bg-blue-950 hover:bg-blue-700 px-4 py-2.5 md:px-6 md:py-4",
@@ -7,7 +7,7 @@ function Button({ children, type = "button", variant = "tertiary", onClick }) {
   }
 
   return (
-    <button onClick={onClick} className={`${variantStyles[variant]} font-medium text-sm/normal transition duration-300  rounded-sm cursor-pointer md:text-base/tight md:rounded-lg`} type={type}>{children}</button>
+    <button onClick={onClick} className={`${variantStyles[variant]} font-medium text-sm/normal transition duration-300  rounded-sm cursor-pointer md:text-base/tight md:rounded-lg ${classes}`} type={type}>{children}</button>
   )
 
 }
